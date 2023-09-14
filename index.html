@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image and Video Viewer</title>
+    <link rel="stylesheet" href="exam.css">
+   
+</head>
+
+<body>
+    <nav>
+        <h1>Image and Video Viewer</h1>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Images</a></li>
+            <li><a href="#">Videos</a></li>
+            <li><a href="page2.html"><button class="navv">Page2</button></a></li>
+        </ul>
+    </nav>
+
+   <header>
+    <div class="image-container">
+        <img class="image" src="naruto.jpg" alt="Image 1">
+        <button class="change-image">Change Image</button>
+    </div>
+
+   
+    <div class="image-container">
+        <img class="image" src="naruto1.jpg" alt="Image 2">
+        <button class="change-image">Change Image</button>
+    </div>
+
+    <div class="image-container">
+        <img class="image" src="naruto3.jpg" alt="Image 3">
+        <button class="change-image">Change Image</button>
+    </div>
+</header>
+<br>
+<br>
+<br>
+    <footer>
+    <div id="video-container">
+        <video id="video" controls>
+            <source src="banana.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <button id="change-video">Change Video</button>
+    </div>
+    <div id="video-container">
+        <video id="video" controls>
+            <source src="video2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <button id="change-video">Change Video</button>
+    </div>
+    <div id="video-container">
+        <video id="video" controls>
+            <source src="video3.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <button id="change-video">Change Video</button>
+    </div>
+     </footer>
+    <script>
+        const images = ["onepiece1.jpg", "onepiece2.jpg", "onepiece3.jpg","naruto.jpg","naruto1.jpg","naruto3.jpg"];
+        const videos = ["banana.mp4", "video2.mp4", "video3.mp4"];
+        let currentImageIndex = 0;
+        let currentVideoIndex = 0;
+
+        const imageElements = document.querySelectorAll(".image");
+        const changeImageButtons = document.querySelectorAll(".change-image");
+        const videoElement = document.getElementById("video");
+        const changeVideoButton = document.getElementById("change-video");
+
+
+        changeImageButtons.forEach((button, index) => {
+            button.addEventListener("click", () => {
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                imageElements[index].src = images[currentImageIndex];
+            });
+        });
+
+ 
+        changeVideoButton.addEventListener("click", () => {
+            currentVideoIndex = (currentVideoIndex + 1) % videos.length;
+            videoElement.src = videos[currentVideoIndex];
+        });
+    </script>
+</body>
+</html>

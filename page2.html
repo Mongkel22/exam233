@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: #ff5733;
+            margin: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .box:hover {
+            transform: scale(1.2);
+        }
+
+        @keyframes example {
+            0% {background-color: #ff5733;}
+            50% {background-color: #33ff57;}
+            100% {background-color: #ff5733;}
+        }
+
+        .animated-box {
+            width: 100px;
+            height: 100px;
+            background-color: #ff5733;
+            margin: 10px;
+            animation: example 3s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Event Page</h1>
+        <p>Click anywhere on the page to trigger the events:</p>
+
+       
+        <div class="box" onclick="alert('Click Event')">Click Me</div>
+
+      
+        <input type="text" placeholder="Blur Event" onblur="alert('Blur Event')">
+
+      
+        <input type="text" placeholder="Change Event" onchange="alert('Change Event')">
+
+     
+        <div class="box" ondblclick="alert('Double Click Event')">Double Click Me</div>
+
+       
+        <input type="text" placeholder="Focus In Event" onfocusin="alert('Focus In Event')">
+
+      
+        <input type="text" placeholder="Focus Out Event" onfocusout="alert('Focus Out Event')">
+
+        <div class="box" onmouseover="alert('Mouse Over Event')">Mouse Over Me</div>
+
+        <div class="box" onresize="alert('Resize Event')">Resize Me (Not Supported)</div>
+
+        
+        <div class="animated-box">
+            Animation Events
+        </div>
+
+        <!-- Button Click Event -->
+        <button onclick="alert('Button Click Event')">Click Me</button>
+    </div>
+    <a href="index.html"><button>Go to Page 1</button></a>
+</body>
+</html>
